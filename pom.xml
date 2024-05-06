@@ -48,30 +48,29 @@
   </dependencies>
   
   <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>redhat</id>
-            <url>https://maven.repository.redhat.com/ga</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>redhat</id>
-            <url>https://maven.repository.redhat.com/ga</url>
-        </pluginRepository>
-    </pluginRepositories>
+    <repository>
+        <id>jboss-enterprise-maven-repository-ea</id>
+        <url>https://maven.repository.redhat.com/earlyaccess/</url>
+        <releases>
+        <enabled>true</enabled>
+        </releases>
+        <snapshots>
+        <enabled>false</enabled>
+        </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+        <id>jboss-enterprise-maven-repository-ea</id>
+        <url>https://maven.repository.redhat.com/earlyaccess/</url>
+        <releases>
+        <enabled>true</enabled>
+        </releases>
+        <snapshots>
+        <enabled>false</enabled>
+        </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
     <build>
         <plugins>
