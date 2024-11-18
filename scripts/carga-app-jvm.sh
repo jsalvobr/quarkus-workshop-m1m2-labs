@@ -10,20 +10,14 @@ RPS=10
 # Tiempo entre lotes de solicitudes
 INTERVAL=$(awk "BEGIN {print 1 / $RPS}")
 
-# Función para realizar una solicitud
-make_request() {
-  # curl -s -X GET "$API_URL" > /dev/null
-  curl -ks -X GET "$API_URL"
-}
-
 # Mensaje para detener el script
 echo "Presiona Ctrl+C para detener el script."
 
 # Bucle infinito
 while true; do
   # Ejecutar solicitudes en paralelo limitadas a RPS
-  seq 1 $RPS | xargs -n1 -P$RPS bash -c 'make_request'
-  
-  # Esperar antes del próximo lote
+  curl -ks -X GET "$API_URL"
+
+  # Esperar antes del proximo lote
   sleep $INTERVAL
 done
